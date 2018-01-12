@@ -1,0 +1,178 @@
+#!/bin/sh
+#
+#
+#   Author: Guo Xiaoyong
+#
+#
+
+interface=wlan1
+ssid="guo"
+channel=11
+ipseg=1
+ieee80211n=0
+
+
+apconf() {
+
+cat <<EOF
+
+ctrl_interface=/var/run/hostapd
+interface=$interface
+ssid=$ssid
+channel=$channel
+#hw_mode=g
+#ieee80211n=$ieee80211n
+
+EOF
+
+}
+
+
+
+dhcpconf() {
+
+cat <<EOF
+dhcp-range=192.168.$ipseg.100,192.168.$ipseg.200,255.255.255.0,12h
+EOF
+
+}
+
+
+
+help() {
+
+cat <<EOF
+wirat:
+   A simple tool to setup a WiFi router with minimal features.
+   notice that root privillege is needed to run wirat
+
+   Written by Guo Xiaoyong
+
+Usage:
+   wirat command [options]
+
+   command:
+      start
+      stop
+      check
+
+Example:
+   wirat start
+   wirat start -i interface -n ssid -c channel -p ipseg 
+   wirat stop
+   wirat check
+   wirat -h
+   
+EOF
+
+exit 0
+
+}
+
+
+
+stop() {
+
+if pgrep hostapd > /dev/null; then
+   killall hostapd && echo "WiFi AP service stopped!"
+   sleep 2
+fi
+
+
+if pgrep dnsmasq > /dev/null; then
+   killall dnsmasq && echo "DHCP service stopped!"
+   sleep 2
+fi
+
+}
+
+
+start() {
+
+apconf > /tmp/hostapd.conf
+dhcpconf > /tmp/dnsmasq.conf
+ifconfig $interface 192.168.$ipseg.1 up
+
+hostapd -B /tmp/hostapd.conf 
+dnsmasq -C /tmp/dnsmasq.conf -l /tmp/dhcp.leases
+
+}
+
+
+parse_options() {
+
+#==============================
+#
+# n: ssid
+# p: ipseg
+# i: interface
+# 
+
+ieee80211n=0
+
+while getopts "i:n:p:c:ht" opt; do
+
+    case $opt in
+      i)
+          interface=$OPTARG;;
+      n) 
+          ssid=$OPTARG;;
+      p) 
+          ipseg=$OPTARG;;
+      c)
+          channel=$OPTARG;;
+      t)
+          ieee80211n=1;;
+      h)
+          help;;
+      *)
+          echo $OPTARG;;
+    esac
+done
+
+}
+
+
+
+if [ $(whoami) != 'root'  ]; then
+    echo "root privillege is needed to run wirat!"
+    help
+fi
+
+
+command=$1
+shift
+parse_options $@
+
+
+case $command in
+  start)
+      stop
+      start
+      exit 0;;
+  stop)
+      stop
+      exit 0;;
+  check)
+      if pgrep hostapd > /dev/null; then
+          echo "WiFi AP service is running!"
+          exit 0
+      else
+          echo "WiFi AP service is stopped!"
+          exit 1
+      fi;;
+      
+  help)
+      help;;
+  *)
+      help;;
+esac
+
+
+
+exit 0
+
+
+
+
+

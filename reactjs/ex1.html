@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ReactJS</title>
+
+</head>
+
+<body>
+  <div class='wrapper'>
+    <button class='like-btn'>
+      <span class='like-text'>thumb up</span>
+      <span>👍</span>
+    </button>
+  </div>
+</body>
+
+<script type="text/javascript">
+  const button = document.querySelector('.like-btn')
+  const buttonText = button.querySelector('.like-text')
+  let isLiked = false
+  button.addEventListener('click', () => {
+    console.log('button clicked.');
+    isLiked = !isLiked
+    if (isLiked) {
+      buttonText.innerHTML = 'cancel'
+    } else {
+      buttonText.innerHTML = 'thumb up'
+    }
+  }, false)
+</script>
+
+
+</html>

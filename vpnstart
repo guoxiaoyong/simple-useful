@@ -1,0 +1,70 @@
+#!/bin/sh 
+# VPN PPP-SSH script 
+# History 
+# 16 May 2002 j.n.pritchard@brad.ac.uk 
+# ******************************************* 
+#
+# Server Hostname 
+SERVER_HOSTNAME=8.8.8.8 # change to your server ip or domain name
+# Username on the server for VPN 
+SERVER_USERNAME=vpn
+# SSH Private Key Location 
+PRIVATE_KEY_FILE=/home/vpn/vpnkey 
+
+
+# ******************************************* 
+# You do NOT need to edit below this line unless you 
+# use the subnet 192.168.250 
+
+# VPN Network subnet (change to a different subnet if this one is in use) 
+VPN_SUBNET=192.168.6 
+# Server ppp address 
+SERVER_IFIPADDR=$VPN_SUBNET.1 
+# Client ppp address 
+CLIENT_IFIPADDR=$VPN_SUBNET.2 
+# Extra SSH Options 
+LOCAL_SSH_OPTS="-P -1 -i $PRIVATE_KEY_FILE" 
+# Path environment 
+PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11/bin 
+
+# Command Alias
+PPPD=/usr/sbin/pppd 
+SSH=/usr/local/bin/ssh 
+if ! test -f $PPPD; then echo "can't find $PPPD"; exit 3; fi
+if ! test -f $SSH; then echo "can't find $SSH" ; exit 4; fi
+
+case "$1" in 
+
+start) 
+# echo Starting VPN Connection 
+$ updetach noauth passive pty "$ $ $ -l$ -o Batchmode=yes sudo $ nodetach notty noauth" ipparam vpn $:$ 
+pppd updetach defaultroute replacedefaultroute usepeerdns noauth passive pty "ssh root@$remote -o Batchmode=yes /usr/sbin/pppd nodetach notty noauth ms-dns 8.8.8.8"  10.0.0.1:10.0.0.2
+# echo "connected." 
+;; 
+
+stop) 
+# echo -n "Stopping vpn to $SERVER_HOSTNAME: " 
+PID=`ps ax | grep "$ $ $ -l$ -o" | grep -v ' passive ' | grep -v 'grep ' | awk '{print $1}'` 
+   if [ "$" != "" ]; then 
+       kill $PID 
+       echo "disconnected." 
+   else 
+       echo "Failed to find PID for the connection" 
+   fi 
+;; 
+
+config) 
+echo "SERVER_HOSTNAME=$SERVER_HOSTNAME" 
+echo "SERVER_USERNAME=$SERVER_USERNAME" 
+echo "SERVER_IFIPADDR=$SERVER_IFIPADDR" 
+echo "CLIENT_IFIPADDR=$CLIENT_IFIPADDR" 
+;; 
+
+*) 
+echo "Usage: vpn " 
+exit 1 
+;; 
+esac 
+
+exit 0 
+

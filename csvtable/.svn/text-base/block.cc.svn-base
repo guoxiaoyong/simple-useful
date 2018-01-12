@@ -1,0 +1,81 @@
+#include <unistd.h>
+#include <fcntl.h>
+#include "csvtable.h"
+
+using namespace std;
+
+
+int main(int argc, char* argv[]) {
+
+    bool daemon_flag = false;
+
+    if (string(argv[0]) == "block") daemon_flag = true;
+
+
+    if (daemon_flag) {
+
+        close(0);
+        close(1);
+        close(2);
+
+        daemon(0, 1);
+    }
+
+
+    string script_file("/tmp/block/config");
+    string input("/tmp/block/n0");
+    string output("/tmp/block/n1");
+    string errput("/tmp/block/n2");
+    string cmd("/usr/bin/bash");
+    cmd += " ";
+    cmd += script_file;
+
+
+    int fid0;
+    int fid1;
+    int fid2;
+
+    while (1) {
+
+        string script = file_get_contents(script_file);
+
+        if ( script.find("#end") != string::npos ) {
+
+            if (script.find("#quit") != string::npos) {
+
+                file_put_contents(script_file, "system temp file");
+                break;
+
+            } else {
+
+
+                if (daemon_flag) {
+
+                    fid0 = open(input.c_str(),  O_RDWR);
+                    fid1 = open(output.c_str(), O_RDWR|O_TRUNC);
+                    fid2 = open(errput.c_str(), O_RDWR|O_TRUNC);
+
+                    assert(fid0 == 0);
+                    assert(fid1 == 1);
+                    assert(fid2 == 2);
+                }
+
+                system(cmd.c_str());
+                file_put_contents(script_file, "system temp file");
+
+                if (daemon_flag) {
+
+                    close(fid0);
+                    close(fid1);
+                    close(fid2);
+                }
+            }
+
+        }
+
+        sleep(1);
+    }
+
+    return 0;
+}
+

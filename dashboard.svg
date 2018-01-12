@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="dashboard.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="837.48825"
+     inkscape:cy="1020.9611"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1941"
+     inkscape:window-height="1129"
+     inkscape:window-x="131"
+     inkscape:window-y="55"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#e6e6e6;stroke:#000000;stroke-width:0.45310462"
+       id="rect3746"
+       width="163.85315"
+       height="180.10614"
+       x="18.615091"
+       y="19.281761" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="32.445587"
+       y="44.423191"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="32.445587"
+         y="44.423191"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';stroke-width:0.26458332">Launch name:</tspan></text>
+    <text
+       id="text16"
+       y="57.203392"
+       x="57.601669"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';stroke-width:0.26458332"
+         y="57.203392"
+         x="57.601669"
+         id="tspan14"
+         sodipodi:role="line">Machine:</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="62.479927"
+       y="69.836311"
+       id="text39"><tspan
+         sodipodi:role="line"
+         id="tspan37"
+         x="62.479927"
+         y="69.836311"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';stroke-width:0.26458332">Version:</tspan></text>
+    <g
+       id="g3781"
+       transform="matrix(1.0097068,0,0,0.99988907,-0.24819831,19.893705)">
+      <rect
+         id="rect3772"
+         width="63.003864"
+         height="16.512796"
+         x="25.761452"
+         y="96.991508"
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.38273865" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="28.669708"
+         y="108.32893"
+         id="text3776"><tspan
+           sodipodi:role="line"
+           id="tspan3774"
+           x="28.669708"
+           y="108.32893"
+           style="stroke-width:0.26458332">GetInfo</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.0097068,0,0,0.99988907,-0.24819831,38.09065)"
+       id="g3789">
+      <rect
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.38273865"
+         y="96.991508"
+         x="25.761452"
+         height="16.512796"
+         width="63.003864"
+         id="rect3783" />
+      <text
+         id="text3787"
+         y="108.32893"
+         x="28.669708"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="108.32893"
+           x="28.669708"
+           id="tspan3785"
+           sodipodi:role="line">PNL</tspan></text>
+    </g>
+    <g
+       id="g3797"
+       transform="matrix(1.0097068,0,0,0.99988907,-0.24819831,56.287583)">
+      <rect
+         id="rect3791"
+         width="63.003864"
+         height="16.512796"
+         x="25.761452"
+         y="96.991508"
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.38273865" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="28.669708"
+         y="108.32893"
+         id="text3795"><tspan
+           sodipodi:role="line"
+           id="tspan3793"
+           x="28.669708"
+           y="108.32893"
+           style="stroke-width:0.26458332">CMD</tspan></text>
+    </g>
+    <g
+       id="g3813">
+      <rect
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.38457042"
+         y="80.47963"
+         x="25.762373"
+         height="16.510965"
+         width="63.615429"
+         id="rect45" />
+      <text
+         id="text49"
+         y="91.816139"
+         x="28.669714"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332"
+           y="91.816139"
+           x="28.669714"
+           id="tspan47"
+           sodipodi:role="line">Start</tspan></text>
+      <ellipse
+         style="fill:#008000;stroke-width:0.15974842"
+         ry="5.7053008"
+         rx="6.0476189"
+         cy="90.211365"
+         cx="67.279747"
+         id="path102" />
+    </g>
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:0.34339249"
+       id="rect104"
+       width="78.315079"
+       height="89.014061"
+       x="98.175598"
+       y="79.686829" />
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:0.30027819"
+       id="rect106"
+       width="184.08551"
+       height="19.920288"
+       x="14.295763"
+       y="264.32346" />
+    <text
+       id="text110"
+       y="30.526785"
+       x="26.637152"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'American Typewriter';-inkscape-font-specification:'American Typewriter';stroke-width:0.26458332"
+         y="30.526785"
+         x="26.637152"
+         id="tspan108"
+         sodipodi:role="line">Strategy name:</tspan></text>
+    <g
+       id="g3819"
+       transform="translate(-1.4940872,0.74964739)">
+      <rect
+         id="rect112"
+         width="63.615429"
+         height="16.510965"
+         x="27.25646"
+         y="97.926918"
+         style="fill:#b3b3b3;stroke:#000000;stroke-width:0.38457042" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         x="29.634634"
+         y="109.26343"
+         id="text116"><tspan
+           sodipodi:role="line"
+           id="tspan114"
+           x="29.634634"
+           y="109.26343"
+           style="stroke-width:0.26458332">Stop</tspan></text>
+      <ellipse
+         id="ellipse118"
+         cx="67.639908"
+         cy="106.14675"
+         rx="6.0476189"
+         ry="5.7053008"
+         style="fill:#008000;stroke-width:0.15974842" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="29.860117"
+       y="188.52084"
+       id="text3823"><tspan
+         sodipodi:role="line"
+         id="tspan3821"
+         x="29.860117"
+         y="188.52084"
+         style="stroke-width:0.26458332">uptime</tspan></text>
+  </g>
+</svg>

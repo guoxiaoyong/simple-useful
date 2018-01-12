@@ -1,0 +1,4 @@
+#!/bin/sh
+cd /home/guo/cron
+#mplayer -vo jpeg -ao null -frames 1 tv://
+mail -s "[GUOXIAOYONG]" -a 00000001.jpg -r neodreamer@163.com -H mutou9922@sina.com < tmpl.html

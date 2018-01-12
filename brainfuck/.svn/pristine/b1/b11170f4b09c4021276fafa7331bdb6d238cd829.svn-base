@@ -1,0 +1,477 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><!-- base href="http://www.iwriteiam.nl/Ha_bf_Turing.html" -->
+
+<title>BF is Turing-complete</title>
+</head><body>
+
+<h1><a href="http://www.iwriteiam.nl/Ha_BF.html">BF</a> is Turing-complete</h1>
+
+<a href="http://www.wikipedia.org/wiki/Alan_Turing">Alan Turing</a> came up with the idea for the so called
+<a href="http://www.wikipedia.org/wiki/Turing_machine">Turing Machine</a>, a very simplistic computing model, which yet is powerfull
+enough to calculate all possible function which can be calculated.
+A Turing Machine consists of an endless tape of cells, which each
+can contain any of a given set of symbols, a pointer pointing to one
+of the cells, and a certain finite state control.
+Depending on the function to be calculated the finite state control
+determines how the tape is manipulated. It does this by reading the
+symbol under the pointer, and decides what to do:
+write a new symbol on the current cell, move the tape to the left,
+or to the right, and what will be the next state.
+<p>
+Each turing machine can be specified by the five elements:
+</p><ul>
+<li>A finite set of symbols <i>A</i>, also called the alphabet.
+</li><li>An initial symbol <i>a<sub>init</sub></i>, which each cell
+	contains on initialization.
+</li><li>A finite set of states <i>S</i>.
+</li><li>An initial state <i>s<sub>init</sub></i>.
+</li><li>A final state <i>s<sub>final</sub></i>.
+</li><li>A function <s>f</s> of state and symbols onto a tupple
+	consisting of a new state, a new symbol, and a movement.
+	The movement can be one of <b>right</b> and <b>left</b>.
+</li></ul>
+<p>
+Many interesting properties of Turing Machines have been proven
+so far. For example, that each Turing Machine can be transformed into
+a Turing Machine with a tape that is cut-off on one side, and endless
+on the other side. Or that every Turing machine can be transformed
+into a Turing machine with set of symbols contains just two symbols.
+</p><p>
+A language is said to be
+<a href="http://www.wikipedia.org/wiki/Turing_complete">'Turing-complete'</a>,
+if for each functions that can be calculated with a Turing Machine, it can be
+shown that there is a program in this language that performs the same function.
+There are basically three approaches to proof that a language is Turing-complete.
+These are:
+</p><ol>
+<li><a href="#map">Show</a> there is some mapping from each possible Turing
+	machine to a program in the language.
+</li><li><a href="#UTM" --1--="">Show</a> that there is a program in the language that
+	emulates a Universal Turing Machine.
+</li><li><a href="#URM" --1--="">Show</a> that the language is equivalent with (or a
+	superset of) a language that is known to be Turing-complete.
+</li></ol>
+On the rest of the page, proofs of each of the above approaches
+will be given.
+
+<p></p><hr>
+
+<h1><a name="map">Translating Turing Machines to BF programs</a></h1>
+
+We can proof that BF is Turing-complete, if we can show for
+every possible Turing machine, there is an equivalent BF program.
+Of course, we only need to show that a Turing Machine with a tape
+limited on one side can be simulated.
+What we need is an algorithm, which given a Turing machine, specified
+by the six elements given above, generates a BF program, which
+will simulate the Turing machine.
+<p>
+To achieve this, the set of symbols <i>A</i> is mapped onto the
+numbers 0 to <i>n</i>-1, where <i>n</i> equals the number of
+symbols, such that <i>a<sub>init</sub></i> maps onto zero.
+Likewise, the set of states <i>S</i> is mapped onto the numbers
+0 to <i>m</i>-1, where <i>m</i> equals the number of states,
+such that <i>s<sub>init</sub></i> maps onto zero,
+and <i>s<sub>final</sub></i> maps onto 1.
+</p><p>
+To simulate a Turing machine, we need an array with unlimited
+length to represent the tape, a index into that array representing
+the position of the head, and the current state.
+To program this in BF we will need to assign these to some
+memory locations. The position of the head will be stored
+in memory location <tt><i>head</i></tt>, and the current state
+in the memory location <tt><i>state</i></tt>.
+Of course, some additional temporary memory locations will
+be needed. Using the terminology introduced on the page
+<a href="http://www.iwriteiam.nl/Ha_bf_intro.html">An introduction to programming in BF</a>,
+we need a program of the following form:
+
+</p><ul>
+  <tt><i>IsOne(state,t1)<br>
+  Not(t1,t2,t3)<br>
+  while(t2)</i></tt>
+  <ul>
+    <tt><i>getarray(base,1,0,head,cursymbol)</i></tt>
+    <p>
+    (some code which given the state and the cursymbol<br>
+    assigns a value to newstate, newsymbol, and newhead)
+	</p><p>
+    <tt><i>setarray(base,1,0,newhead,newsymbol)<br>
+    zero(cursymbol)<br>
+    zero(newsymbol)<br>
+    zero(head) move(newhead,head,t1)<br>
+    zero(state) move(newstate,state,t1)
+    </i></tt></p><p><tt><i>
+    IsOne(state,t1)<br>
+    Not(t1,t2,t3)</i></tt>
+  </p></ul>
+  <tt><i>wend(t2)</i></tt>
+</ul>
+
+Now we only need to fill in the middle part of the loop.
+For each tupple in <s>f</s> we need to generate some code.
+This means that for each symbol <i>i</i> in the range
+0 to <i>n</i>-1, and each state <i>j</i> in the range
+0 to <i>m</i>-1, we have to insert a line:
+<pre>   <i>map(state,head,cursymbol,
+       i,j,k,l,m,
+       newstate,newhead,newsymbol)</i>
+</pre>
+Where, given the tupple <i>f(s<sub>i</sub>,a<sub>j</sub>)</i>,
+<i>k</i> is the number representing the new state,
+<i>l</i> is the number representing the new symbol,
+and <i>m</i> is equal to 1 if the movement is <b>right</b>
+and equal to 0 if the movement is <b>left</b>.
+The procedure <i>map</i> is defined as follows:
+<pre>  <i>map(state,head,cursymbol,
+      astate,asymbol,anewstate,anewsymbol,movement,
+      newstate,newhead,newsymbol)</i>
+  = <i>
+    copy(state,t1,t2)
+    const(t2,astate)
+    Equal(t1,t2,t3,t4,t5)
+    if(t3)
+      copy(cursymbol,t1,t2)
+      const(t2,asymbol)
+      Equal(t1,t2,t3,t4,t5)
+      if(t3)
+        const(newstate,anewstate)
+        const(newsymbol,anewsymbol)
+        copy(head,newhead,t1)
+        ifelse(movement,t1)
+          inc(newhead)
+        else(movement,t1)
+          dec(newhead)
+        endelse(t1)
+      endif(t3)
+    endif(t3)</i>
+</pre>
+In this code the expression <i>const(v,c)</i> stands for the
+piece of code that fills the memory location <i>v</i> with the
+value <i>c</i>.
+Now, we only need to assign real values to the variable representing
+the memory locations to arrive at the final BF program executing
+the given Turing machine. Note that memory location assigned
+to <i>base</i> should be larger than all other memory locations
+used.
+
+<p></p><hr>
+
+<h1><a name="UTM">Universal Turing Machine</a></h1>
+
+<table align="CENTER" border="1" cellpadding="15"><tbody><tr><td>
+	<center>
+	<font color="#FF0000">The text of this section is based on<br>
+	<a href="http://www.hevanet.com/cristofd/brainfuck/utm.b">this fully
+	documented BF program</a><br>written by
+	<a href="http://www.hevanet.com/cristofd/brainfuck/">Daniel B. Cristofani</a>.
+	</font></center><font color="#FF0000">
+</font></td></tr></tbody></table>
+<p>
+A Universal Turing Machine (UTM) is a Turing machine that can
+simulate some Turing-complete computational model. By giving
+a BF program which simulates a particular UTM, we proof
+that BF is Turing-complete. The UTM that we implement here is
+taken from from Yurii Rogozhin's article
+<i>Small universal Turing machines</i>, in Theoretical Computer
+Science, November 1996 (volume 168 pgs 215-240).
+This UTM simulate a Turing-complete class of tag-systems.
+A tag-system transforms strings over an alphabet
+A = {a[1],a[2],...,a[n], a[n+1]} as follows: a positive
+integer m is chosen, and so is a function P that maps
+each a[i] for 1&lt;=i&lt;=n to a string P(a[i]) over
+the alphabet A. Now:
+</p><ol>
+<li> if the string being transformed has fewer than m
+     elements, the whole process stops now.
+</li><li> m elements are removed from the beginning of the string
+</li><li> call the first element removed a[k]; if k=n+1 the
+     whole process stops now.
+</li><li> P(a[k]) is appended to the string.
+</li><li> steps 1-5 are repeated.
+</li></ol>
+
+The particular class of tag-systems this Turing machine
+simulates is the class where m = 2, the initial string
+has length at least 2, and all P(a[i]) where 1&lt;=i&lt;=n
+are of the form a[n]a[n]B[i] where B[i] is some string
+over the alphabet A (B[i] is the empty string if and
+only if i=n).
+<p>
+The input for this Turing machine is mildly complex, and there
+is no error checking.
+</p><ul>
+<li> The representation of a symbol a[i] from the alphabet
+     A is a string of 1s which is one element longer than
+     twice the combined length of all P(a[j]) where
+     1&lt;=j&lt;i.
+<p>
+</p></li><li> a value like P(a[i]) = a[n]a[n]a[w]a[x]...a[y]a[z] is
+     represented as follows:
+     <ul><nobr>
+		<tt>b 1</tt><br>
+		<tt>b 111...</tt>(as many as required to represent a[z] as described above) <tt>b</tt><br>
+		<tt>b 111...</tt>(to represent a[y] as described above) <tt>b</tt><br>
+		<tt>.</tt><br>
+		<tt>.</tt><br>
+		<tt>.</tt><br>
+		<tt>b 111...</tt>(to represent a[x]) <tt>b</tt><br>
+		<tt>b 111...</tt>(to represent a[w]) <tt>b</tt><br>
+		<tt>b 111...</tt>(to represent a[n]) <tt>b</tt><br>
+		<tt>b 111...</tt>(as many as for a[n] as described above, MINUS the number of 1s that represent a[i]; and no final b)
+		</nobr>
+	 </ul>
+<p>
+</p></li><li> The function P is represented by listing all its
+     outputs in the order P(a[n]), P(a[n-1]),...,P(a[2]),P(a[1]).
+     The representation of P(a[n+1])=STOP is done for you.
+<p>
+</p></li><li> The initial string a[q]a[r]...a[s]a[t] to be transformed
+     by the tag-system is represented as
+     <ul><nobr>
+		<tt>111...</tt>(as many as required to represent a[q] as above) <tt>c</tt><br>
+		<tt>111...</tt>(to represent a[r]) <tt>c</tt><br>
+		<tt>.</tt><br>
+		<tt>.</tt><br>
+		<tt>.</tt><br>
+		<tt>111...</tt>(to represent a[s]) <tt>c</tt><br>
+		<tt>111...</tt>(to represent a[t]; note that there is no final c.)
+     </nobr></ul>
+<p>
+</p></li><li>The input to this program is a function P as described above,
+	then a single b, then the initial string to be transformed.
+	Run all the 1s, bs, and cs together in one line with nothing between,
+	followed by a return.
+<p>
+</p></li><li>The output format, if the program terminates, is the same as the input
+	format for the initial string, and represents the final state of the
+	transformed string, with a final a[n+1] appended due to a peculiarity
+	of the Turing machine's algorithm.
+</li></ul>
+
+<h4> An example input string </h4>
+
+We take as an example the tag-system over the alphabet
+A = {a[1], a[2], a[3], a[4]}, where m = 2 and:<br>
+P(a[1]) = a[3]a[3]a[2]a[1]a[4]<br>
+P(a[2]) = a[3]a[3]a[1]<br>
+P(a[3]) = a[3]a[3]<br>
+P(a[4]) = STOP
+<p>
+It meets the criteria above; and when applied to the
+initial string a[2]a[1]a[1] it gives:
+</p><pre>a[2]a[1]a[1]
+        a[1]a[3]a[3]a[1]
+                a[3]a[1]a[3]a[3]a[2]a[1]a[4]
+                        a[3]a[3]a[2]a[1]a[4]a[3]a[3]
+                                a[2]a[1]a[4]a[3]a[3]a[3]a[3]
+                                        a[4]a[3]a[3]a[3]a[3]a[3]a[3]a[1]
+                                                a[3]a[3]a[3]a[3]a[3]a[1]
+</pre>
+and then it's done.
+<p>
+Now, the encoding:
+</p><pre>a[1] is 1
+a[2] is 11111111111
+a[3] is 11111111111111111
+a[4] is 111111111111111111111
+
+P(a[1]) is b1 b111111111111111111111b b1b b11111111111b b11111111111111111b b1111111111111111
+P(a[2]) is b1 b1b b11111111111111111b b111111
+P(a[3]) is b1 b11111111111111111b b
+</pre>
+the initial string is <tt>11111111111c1c1</tt>
+<p>
+and so the whole input is
+</p><pre>b1 b11111111111111111b b
+b1 b1b b11111111111111111b b111111
+b1 b111111111111111111111b b1b b11111111111b b11111111111111111b b1111111111111111
+b
+11111111111c1c1
+</pre>
+which when run together for input to the Turing machine becomes
+<pre>b1b11111111111111111bbb1b1bb11111111111111111bb111111b1b111111111111111111111bb1bb11111111111bb11111111111111111bb1111111111111111b11111111111c1c1
+</pre>
+
+<h4>The Universal Turing Machine</h4>
+
+The Universal Turing Machine (UTM) implemented by the BF program is
+a four state, six symbol (namely: '1','b','&lt;','&gt;','0', and 'c')
+Turing machine.
+For those interested, the state table of the machine is given
+in the following table. Each cell contains a 5-tupple representing
+the current state, the symbol read, the symbol written, the action
+(L stands for move left, R stands for move right and H stands for
+halt), and the new state.
+<p>
+
+<table border="1" cellpadding="6">
+<tbody><tr><td>11&lt;L1</td><td>210R2</td><td>311R3</td><td>410R4</td></tr>
+<tr><td>1b&gt;R1</td><td>2b&gt;L3</td><td>3b&lt;R4</td><td>4bcL2</td></tr>
+<tr><td>1&gt;bL1</td><td>2&gt;&lt;R2</td><td>3&gt;bR3</td><td>4&gt;&lt;R4</td></tr>
+<tr><td>1&lt;0R1</td><td>2&lt;&gt;L2</td><td>3&lt; H</td><td>4&lt;</td></tr>
+<tr><td>10&lt;L1</td><td>201L2</td><td>30cR1</td><td>40cL2</td></tr>
+<tr><td>1c0R4</td><td>2cbR2</td><td>3c1R1</td><td>4cbR4</td></tr>
+</tbody></table>
+</p>
+The initial state is 1, tape cells are set as
+per the input but with the termination code P(a[n+1])=STOP
+represented as a &lt;b at the left end and all other cells
+on both sides (actually, only the right is needed) holding
+symbol 0, and the head is initially at the first 1 in the
+code for the initial string.
+<p>
+The minimal test case b1b1bbb1c1c11111 represents the tag-system
+where P(a[1]) = a[1]a[1] and P(a[2]) = STOP, applied to the string
+a[1]a[1]a[2]. This runs for 518 steps of the Turing machine,
+exercising all 23 Turing machine instructions, before halting
+with the output string a[1].
+
+
+</p><h4> BF program </h4>
+
+Below follows the BF program which implements the above Universal Turing Machine.
+(For a detailed explaination of this program, read
+<a href="http://www.hevanet.com/cristofd/brainfuck/utm.b">the original source file</a>
+by Daniel Cristofani.)
+
+<pre>+++&gt;++&gt;&gt;&gt;+[&gt;&gt;,[&gt;+++++&lt;[[-&gt;]&lt;&lt;]&lt;[&gt;]&gt;]&gt;-[&lt;&lt;+++++&gt;&gt;-[&lt;&lt;----&gt;&gt;-[-&gt;]&lt;]]
+&lt;[&lt;-&lt;[&lt;]+&lt;+[&gt;]&lt;&lt;+&gt;-&gt;&gt;&gt;]&lt;]&lt;[&lt;]&gt;[-[&gt;++++++&lt;-]&gt;[&lt;+&gt;-]+&lt;&lt;&lt;+++&gt;+&gt;
+  [-
+    [&lt;&lt;+&gt;-&gt;-
+      [&lt;&lt;[-]&gt;&gt;-
+        [&lt;&lt;++&gt;+&gt;-
+          [&lt;&lt;--&gt;-&gt;&gt;+++&lt;-
+            [&lt;&lt;+&gt;+&gt;&gt;--&lt;-
+              [&lt;&lt;-&gt;-&gt;-
+                [&lt;&lt;++++&gt;+&gt;&gt;+&lt;-
+                  [&gt;-&lt;-
+                    [&lt;&lt;-&gt;-&gt;-
+                      [&lt;&lt;-&gt;&gt;-
+                        [&lt;&lt;+++&gt;&gt;&gt;-&lt;-
+                          [&lt;&lt;----&gt;&gt;&gt;++&lt;-
+                            [&lt;&lt;++&gt;&gt;&gt;+&lt;-
+                              [&gt;[-]&lt;-
+                                [&lt;&lt;-&gt;&gt;&gt;+++&lt;-
+                                  [&lt;&lt;-&gt;&gt;&gt;--&lt;-
+                                    [&lt;&lt;++++&gt;+&gt;&gt;+&lt;-
+                                      [&lt;&lt;[-]&gt;-&gt;&gt;++&lt;-
+                                        [&lt;&lt;+++++&gt;+&gt;&gt;--&lt;-
+                                          [&lt;-&gt;&gt;++&lt;
+                                            [&lt;&lt;-&gt;&gt;-
+]]]]]]]]]]]]]]]]]]]]]]&lt;[-&gt;&gt;[&lt;&lt;+&gt;&gt;-]&lt;&lt;&lt;[&gt;&gt;&gt;+&lt;&lt;&lt;-]&lt;[&gt;&gt;&gt;+&lt;&lt;&lt;-]]&gt;&gt;]
+&gt;[-[---[-&lt;]]&gt;]&gt;[+++[&lt;+++++&gt;--]&gt;]+&lt;++[[&gt;+++++&lt;-]&lt;]&gt;&gt;[-.&gt;]
+</pre>
+
+
+<p></p><hr>
+
+<a name="URM">
+<h1>URM is BF-complete</h1>
+
+URM stands for Universal Register Machine. The statement "URM is BF-complete",
+simply means that all possible URM programs have an equivalent BF program,
+if each memory cell may contain an arbitrary large number. Actually, the set
+of possible BF programs is much larger than the set of possible URM programs.
+You would hardly believe it, but URM is also Turing-complete, due to the fact
+that the registers can store infinite numbers, although the mapping
+from general Turing machines to URM is very, very complicated.
+Based on the ideas for a </a><a href="#UTM" --1--="">UTM in BF</a>, Daniel Cristofani
+wrote a <a href="http://www.hevanet.com/cristofd/brainfuck/urmutm.txt">UTM for URM</a> using only five registers.) These fact combined, proof
+that BF is Turing-complete.
+<p>
+The Universal Register Machine is a machine with a fixed
+number of characters, and it supports the following
+commands:
+</p><ul>
+<li><tt>a<i>n</i></tt> : increment register <tt><i>n</i></tt>
+</li><li><tt>s<i>n</i></tt> : decrement register <tt><i>n</i></tt>
+</li><li><tt><i>x</i>; <i>y</i></tt> : execute command <tt><i>x</i></tt> and then <tt><i>y</i></tt>
+</li><li><tt>(<i>x</i>)<i>n</i></tt> : execute command <tt><i>x</i></tt> while register <tt><i>n</i></tt> is nonzero
+</li><li><tt>.&nbsp;</tt> : ("dot blank")  halt the machine.
+</li></ul>
+
+Examples URM programs are:
+<ul>
+<li>Add register 3 to register 2:
+<pre>   (a2;s3)3.
+</pre>
+</li><li>Multiply register 2 with register 3:
+<pre>   (a4;a5;s2)2; ((a2;s4)4; s3; (a1;a4;s5)5; (a5;s1)1)3.
+</pre>
+</li></ul>
+<p>
+There is almost a one-to-one mapping from URM to BF.
+The <tt>a<i>n</i></tt> expression maps to <tt>+</tt>,
+the <tt>s<i>n</i></tt> expression maps to <tt>-</tt>,
+and the <tt>(<i>x</i>)<i>n</i></tt> expression maps to <tt>[<i>x</i>]</tt>,
+of course preceded with the right amouth of <tt>&gt;</tt> and
+<tt>&lt;</tt> to move to the indicated memory location.
+The translation of the above two URM programs to BF are:
+</p><ul>
+<li>Add register 3 to register 2:
+<pre>   &gt;&gt;&gt;[&lt;+&gt;-]&lt;&lt;&lt;
+</pre>
+</li><li>Multiply register 2 with register 3:
+<pre>   &gt;&gt;[&gt;&gt;+&gt;+&lt;&lt;&lt;-]&gt;[&gt;[&lt;&lt;+&gt;&gt;-]&lt;-&gt;&gt;[&lt;&lt;&lt;&lt;+&gt;&gt;&gt;+&gt;-]&lt;&lt;&lt;&lt;[&gt;&gt;&gt;&gt;+&lt;&lt;&lt;&lt;-]&gt;&gt;]&lt;&lt;&lt;
+</pre>
+</li></ul>
+<p>
+</p><p>
+It is possible to make context free grammars for both
+BF and URM, such that matching parse trees indicate equivalent
+programs. Such a grammar is given below:
+</p><p></p><center>
+<table border="1" cellpadding="4">
+<tbody><tr><td align="CENTER">URM</td><td align="CENTER">BF</td></tr><tr></tr>
+<tr><td align="CENTER">
+  <tt><i>root</i> = <i>S<sub>1</sub></i>.</tt>
+</td><td align="CENTER">
+  <tt><i>root</i> = <i>S<sub>1</sub></i></tt>
+</td></tr>
+<tr><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = a<i>n</i></tt>
+</td><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = +</tt>
+</td></tr>
+<tr><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = s<i>n</i></tt>
+</td><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = -</tt>
+</td></tr>
+<tr><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = <i>S<sub>n</sub></i> ; <i>S<sub>n</sub></i></tt>
+</td><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = <i>S<sub>n</sub></i> <i>S<sub>n</sub></i></tt>
+</td></tr>
+<tr><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = ( <i>S<sub>n</sub></i> )<i>n</i></tt>
+</td><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = [ <i>S<sub>n</sub></i> ]</tt>
+</td></tr>
+<tr><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = <i>S<sub>n+1</sub></i> </tt>
+</td><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = &gt; <i>S<sub>n+1</sub></i> &lt;</tt>
+</td></tr>
+<tr><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = <i>S<sub>n-1</sub></i> </tt>
+</td><td align="CENTER">
+  <tt><i>S<sub>n</sub></i> = &lt; <i>S<sub>n-1</sub></i> &gt;</tt>
+</td></tr>
+</tbody></table>
+</center><p>
+Using this mapping, one can create
+<a href="http://www.hevanet.com/cristofd/brainfuck/urmutm.b">another UTM in BF</a>
+from the above mentioned UTM in URM.
+</p><p>
+Still, I feel that BF is far more elegant than URM,
+because it gives you more with less symbols.
+BF only needs the symbols "+", "-", "&lt;", "&gt;", "[", and "]",
+whereas URM needs "a", "s", ";", "(", ")", ".", and "0" to "9".
+Although, I have to admit, that BF programs will in general be longer than
+the equivalent URM program, and in most cases also more cryptic.
+
+</p><p></p><hr><address><a href="http://www.iwriteiam.nl/index.html">home and email</a></address>
+
+</body></html>

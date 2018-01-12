@@ -1,0 +1,1 @@
+vlc v4l2:// --rate=1 --video-filter=scene --vout=dummy --aout=dummy --start-time=1 --stop-time=2 --scene-replace --scene-format=jpg --scene-ratio=29.970029 --scene-prefix=snap --scene-path=. vlc://quit

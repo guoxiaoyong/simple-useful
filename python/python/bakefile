@@ -1,0 +1,5 @@
+cc_binary(
+  name = "pybind11_example",
+  srcs = ["pybind11_example.cc"],
+  deps = []
+)

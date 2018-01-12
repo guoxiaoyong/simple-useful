@@ -1,0 +1,20 @@
+
+__GNUC__, __GNUC_MINOR__ and __GNUC_PATCHLEVEL__.
+
+For instance, GCC 4.0.1 will do:
+
+#define __GNUC__ 4
+#define __GNUC_MINOR__ 0
+#define __GNUC_PATCHLEVEL__ 1
+
+Here is a little command line that is nice to remember when you are wondering which are the predeﬁned preprocessor directives deﬁned by the GNU GCC compiler under your current programming environment:
+
+    gcc -E -dM - < /dev/null |less
+
+
+
+查看 GCC 内建的宏定义
+
+GCC 有很多内建的宏，这些宏的名字很难记，但是如果看到宏的名字又很容易理解这个宏的意义。
+
+up in the air

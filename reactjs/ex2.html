@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ReactJS</title>
+</head>
+
+<body>
+  <div class='wrapper'></div>
+</body>
+
+<script type="text/javascript">
+class LikeButton {
+  render() {
+    return `
+        <button id='like-btn'>
+          <span class='like-text'>thumb up</span>
+          <span> 👍  </span>
+        </button>`
+  }
+}
+
+const wrapper = document.querySelector('.wrapper')
+const likeButton1 = new LikeButton()
+wrapper.innerHTML = likeButton1.render()
+const likeButton2 = new LikeButton()
+wrapper.innerHTML += likeButton2.render()
+</script>
+
+</html>

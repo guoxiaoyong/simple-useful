@@ -1,0 +1,90 @@
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017发包出去的招商体育项目: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017发包出去的招商体育项目: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2018五粮液乒乓球: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2018五粮液乒乓球: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/Expansion Into China Deck_FINAL_fox highlights.pdf: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/MEDIA OPERATION: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/MEDIA OPERATION: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/Mountest Women Volleyball: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/Mountest Women Volleyball: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/New P: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/New P: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/RUNDOWN MUSIC: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/RUNDOWN MUSIC: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/Tennis: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/Tennis: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/cheerleading: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/cheerleading: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/desktop: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/desktop: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/reference: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/reference: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/沙排: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/沙排: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/游泳: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/游泳: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/电竞: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/电竞: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/足球: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/足球: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/飞镖: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/飞镖: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/简报&政策: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/简报&政策: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/孙杨&菲尔普斯: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/孙杨&菲尔普斯: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/体育+娱乐休闲业: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/体育+娱乐休闲业: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/标书+嘉定旅游局+商标注册+户外广告+房屋合同: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/标书+嘉定旅游局+商标注册+户外广告+房屋合同: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/星冰智: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/星冰智: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/翔立方: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/翔立方: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/中考体育: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/中考体育: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/体育商业: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/体育商业: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/关于报备: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/关于报备: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/商标注册: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/商标注册: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/园区广告: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/园区广告: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/官摄报价: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/官摄报价: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/工作相关: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/工作相关: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/智能体育: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/智能体育: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/商业赛事.doc: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/企业运动会: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/企业运动会: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/体育电影节: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/体育电影节: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/关于高尔夫: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/关于高尔夫: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/新建文件夹: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/新建文件夹: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/申办赛事请示: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/申办赛事请示: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/赛事招商方案: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/赛事招商方案: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/回款情况一览表.xlsx: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/休闲健身项目规划: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/休闲健身项目规划: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/禹唐体育合作协议.docx: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/还未收讫赞助商名录.docx: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/高尔夫夏令营课程参考.png: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/体育版块业务规划（篮球）: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/体育版块业务规划（篮球）: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/羽毛球——叶钊颖策划案（筹）: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/羽毛球——叶钊颖策划案（筹）: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/世界企业高尔夫挑战赛中国系列赛 - 招商通案.pdf: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-81.jpg: Input/output error                                                                                          [88/1842]
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-82.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-83.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-84.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-85.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-86.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-87.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-88.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-89.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-9.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-90.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-91.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-92.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-93.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-94.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-95.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-96.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-97.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-98.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 5/DAY 4-99.jpg: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 6: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2016 7 Asia-pacific & America/赛事照片/DAY 6: Input/output
+ error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 7 Asia-pacific & America/赛事照片/开幕式&晚宴组图: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2016 7 Asia-pacific & America/赛事照片/开幕式&晚
+宴组图: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 8 NBA LEGEND STAR CHINA TOUR: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2016 8 NBA LEGEND STAR CHINA TOUR: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016 9The Tour of China: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2016 9The Tour of China: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016亚太精英赛: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2016亚太精英赛: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016北京高尔夫: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2016北京高尔夫: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2016“和谐杯”亚美对抗赛: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2016“和谐杯”亚美对抗赛: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017 篮球3X3: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017 篮球3X3: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017GOLF: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017GOLF: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017NBA: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017NBA: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017旅游局: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017旅游局: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017环中赛: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017环中赛: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017艺术体操: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017艺术体操: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017两大球预算: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017两大球预算: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017年拳赛策划: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017年拳赛策划: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017环法中国赛: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017环法中国赛: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017高尔夫规划.doc: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017城市业余联赛: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017城市业余联赛: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017上海市民武术节: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017上海市民武术节: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017智地体育媒体通气会: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017智地体育媒体通气会: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017篮球传奇中国行文件0511: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017篮球传奇中国行文件0511: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017“和谐杯”亚美对抗赛: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017“和谐杯”亚美对抗赛: Input/output error
+cp: /Volumes/TOSHIBA EXT/体育项目管理/2017年珠海市赛事活动安排: unable to copy extended attributes to /Users/xguo/xiaoying/体育项目管理/2017年珠海市赛事活动安排: Input/output error
