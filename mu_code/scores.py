@@ -95,6 +95,6 @@ GE_SHENG_YU_WEI_XIAO = """
 2>._2>=2>_2>_ 1>75_7_6---
 """
 
-for key, value in globals().items():
+for key, value in list(globals().items()):
   if type(value) is str and key.upper() == key:
     globals()[key] = MusicScore(globals()[key]).translate()

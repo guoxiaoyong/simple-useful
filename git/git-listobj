@@ -48,6 +48,6 @@ def main(argv):
   for sha1 in sha1s:
     runcmd(sha1)
 
-    
+
 if __name__ == "__main__":
   main(sys.argv)

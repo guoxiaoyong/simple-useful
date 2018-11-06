@@ -46,7 +46,7 @@ class Puzzle(object):
         res.append(content[n])
     return PuzzleBlock(''.join(res))
 
-print """
+res = """
 <!DOCTYPE html>
 <html lang="en">
 <style type="text/css">
@@ -106,3 +106,5 @@ print """
 </body>
 <html>
 """
+
+print(res)
