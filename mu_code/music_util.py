@@ -100,9 +100,15 @@ class MusicWaveGenerator(object):
       else:
         pitch_frequency = self._pitches[pitch_notation]
       duration = float(duration)/4.0*self._speed
-      samples_list.append(
-          (np.sin(2*np.pi*np.arange(self._fs*duration)*
-                  pitch_frequency/self._fs)).astype(np.float32))
+      main = np.sin(2*np.pi*np.arange(self._fs*duration)*pitch_frequency/self._fs)
+      harm1  = np.sin(2*np.pi*np.arange(self._fs*duration)*2*pitch_frequency/self._fs)/5
+      harm2  = np.sin(2*np.pi*np.arange(self._fs*duration)*4*pitch_frequency/self._fs)/10
+      harm3  = np.sin(2*np.pi*np.arange(self._fs*duration)*6*pitch_frequency/self._fs)/10
+      harm4  = np.sin(2*np.pi*np.arange(self._fs*duration)*8*pitch_frequency/self._fs)/10
+      sample =  main + harm1 + harm2 + harm3 + harm4
+      filt = np.sin(np.linspace(0, np.pi, self._fs*duration))
+      sample *= filt
+      samples_list.append(sample.astype(np.float32))
     return samples_list
 
   def play(self, score):
