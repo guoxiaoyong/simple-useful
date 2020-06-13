@@ -3,6 +3,7 @@
 
 import pyaudio
 import numpy as np
+from scipy.io.wavfile import write as wav_write
 
 class MusicScore(object):
   def __init__(self, simple_score):
@@ -113,11 +114,17 @@ class MusicWaveGenerator(object):
 
   def play(self, score):
     samples_list = self.gen_wave_data(score)
+    wav_write("ok.wav", self._fs, np.concatenate(samples_list))
     audio = pyaudio.PyAudio()
     stream = audio.open(
         format=pyaudio.paFloat32, channels=1, rate=self._fs, output=True)
+
     for samples in samples_list:
       stream.write(samples)
     stream.stop_stream()
     stream.close()
     audio.terminate()
+
+  def write_to_file(self, filename, score):
+    samples_list = self.gen_wave_data(score)
+    wav_write(filename, self._fs, np.concatenate(samples_list))
